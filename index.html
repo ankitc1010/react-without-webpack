@@ -13,18 +13,17 @@
             Object.entries(props).forEach(([key, value]) => {
                 element.setAttribute(key, value)
             })
-            (props.children || children).forEach(
-                child => {
+            children.forEach(
+                (child) => {
                     if (typeof child === 'string')  {
                         element.appendChild(document.createTextNode(child))
                     } else {
                         element.appendChild(child)
                     }
-                    return element
                 }
             )
             return element
         }
-        rootElem.appendChild(createElement('div', { id: 'header'}, ['cool']))
+        rootElem.appendChild(createElement('div', { id: 'header'}, 'cool', createElement('h1', {id: 'cool'}, 'new headline')))
     </script>
 </html>
