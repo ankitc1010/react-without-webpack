@@ -9,7 +9,6 @@
         let rootElem = document.getElementById('root')
         let createElement = (type, props, ...children) => {
             const element = document.createElement(type)
-            console.log(props)
             Object.entries(props).forEach(([key, value]) => {
                 element.setAttribute(key, value)
             })
