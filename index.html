@@ -5,24 +5,12 @@
     <body>
         <div id='root'></div>
     </body>
-    <script>
+    <script src='https://unpkg.com/react@16.4.1/umd/react.development.js'></script>
+    <script src='https://unpkg.com/react-dom@16.4.1/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+    <script type='text/babel'>
         let rootElem = document.getElementById('root')
-        let createElement = (type, props, ...children) => {
-            const element = document.createElement(type)
-            Object.entries(props).forEach(([key, value]) => {
-                element.setAttribute(key, value)
-            })
-            children.forEach(
-                (child) => {
-                    if (typeof child === 'string')  {
-                        element.appendChild(document.createTextNode(child))
-                    } else {
-                        element.appendChild(child)
-                    }
-                }
-            )
-            return element
-        }
-        rootElem.appendChild(createElement('div', { id: 'header'}, 'cool', createElement('h1', {id: 'cool'}, 'new headline')))
+        const element = <div>Project Started</div>
+        ReactDOM.render(element, rootElem);
     </script>
 </html>
